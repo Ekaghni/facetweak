@@ -127,7 +127,7 @@ def _eyes(img, p, a, face_w, u):
     if a.eye_size:
         r = max((lw + rw) / 2 * 1.8, 20 * u)
         for c, _ in eyes:
-            img = warp.magnify(img, c[0], c[1], r, strength=a.eye_size * 0.25)
+            img = warp.magnify(img, c[0], c[1], r, strength=a.eye_size * 0.4)
 
     if a.eye_distance:
         amount = abs(float(rc[0] - lc[0])) * a.eye_distance * 0.3 * 0.5
@@ -138,7 +138,7 @@ def _eyes(img, p, a, face_w, u):
         if a.eye_height:
             img = warp.shift(img, c[0], c[1], w * 2.0, 0, a.eye_height * 12 * u)
         if a.eye_openness:
-            img = warp.stretch(img, c[0], c[1], w * 1.5, 0, a.eye_openness * 0.3)
+            img = warp.stretch(img, c[0], c[1], w * 1.5, 0, a.eye_openness * 0.4)
         if a.eye_width:
             img = warp.stretch(img, c[0], c[1], w * 1.5, a.eye_width * 0.3, 0)
     return img
@@ -181,7 +181,7 @@ def _nose(img, p, a, face_w, u):
 
     if a.nose_size:
         r = max((nose_w + nose_h) * 0.4, 18 * u)
-        img = warp.magnify(img, tip[0], tip[1], r, strength=a.nose_size * 0.45)
+        img = warp.magnify(img, tip[0], tip[1], r, strength=a.nose_size * 0.6)
     if a.nose_height:
         r = max((nose_w + nose_h) * 0.5, 25 * u)
         img = warp.shift(img, tip[0], tip[1], r, 0, -a.nose_height * 15 * u)
@@ -204,7 +204,7 @@ def _lips(img, p, a, face_w, u):
     if a.lip_size:
         cx = (p[48, 0] + p[54, 0]) / 2
         cy = (p[51, 1] + p[57, 1]) / 2
-        img = warp.magnify(img, cx, cy, mouth_w * 0.8, max(mouth_h * 1.5, 3.0), a.lip_size * 0.35)
+        img = warp.magnify(img, cx, cy, mouth_w * 0.8, max(mouth_h * 1.5, 3.0), a.lip_size * 0.5)
 
     if a.lip_gap:
         upper = _mid(p, (50, 51, 52))
@@ -227,7 +227,7 @@ def _lips(img, p, a, face_w, u):
 
 def _face(img, p, a, face_w, u):
     if a.face_slim:
-        s = a.face_slim * 0.4
+        s = a.face_slim * 0.6
         left = _mid(p, range(1, 6))
         right = _mid(p, range(11, 16))
         img = warp.shift(img, left[0], left[1], face_w * 0.2, s * 15 * u, 0)

@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.0
+
+- Stronger maximum effect for eye size, eye openness, face slimming, lip size and nose size, so a value of 1.0 is clearly visible. Values you used before will look stronger.
+- README comparison images are cropped to the face and use stronger settings. `benchmarks/make_examples.py` regenerates them.
+
 ## 0.1.3
 
 - README: more before/after examples, a strength comparison and a table of what has and hasn't been tested. Three more public domain sample photos in `examples/`.

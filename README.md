@@ -11,7 +11,7 @@ It does not use a generative model. Nothing is repainted, so skin texture and li
 
 ![before and after](https://raw.githubusercontent.com/Ekaghni/facetweak/main/assets/before_after.jpg)
 
-Left: original. Right: `--eye-size 0.5 --face-slim 0.5 --nose-bridge -0.3 --lip-size 0.25 --chin-fullness -0.3`. The photo is a public domain NASA portrait (see `examples/SOURCES.txt`).
+Left: original. Right: `--eye-size 0.9 --face-slim 0.9 --nose-bridge -0.6 --lip-size 0.5 --chin-fullness -0.6`, a strong edit so the change is easy to see. The photo is a public domain NASA portrait (see `examples/SOURCES.txt`). The images are cropped to the face, and `benchmarks/make_examples.py` regenerates them.
 
 ## Quick start
 
@@ -43,7 +43,7 @@ $ facetweak examples/portrait.jpg -o out.jpg --preset subtle --eye-size 0.5 --js
 
 ## Read this first
 
-This edits how a face looks in a photo. Use it on your own pictures or pictures you have permission to edit, and don't present edited photos as unedited ones where that would mislead people. It is also a warp, not magic: push a value to 1 and you will see it. Values around 0.2 to 0.5 look natural. Look at the result before you use it.
+This edits how a face looks in a photo. Use it on your own pictures or pictures you have permission to edit, and don't present edited photos as unedited ones where that would mislead people. It is also a warp, not magic: push a value to 1 and you will see it. Values around 0.2 to 0.5 look natural; 0.8 and up is obvious. Look at the result before you use it.
 
 ## Install
 
@@ -108,25 +108,25 @@ If you already have landmarks (from your own detector, in the 68-point layout), 
 
 ## More examples
 
-All four photos are public domain NASA portraits in `examples/`. Left is the original, right is the result. The settings are in each caption, so you can reproduce them.
+All four photos are public domain NASA portraits in `examples/`. Left is the original, right is the result, cropped to the face. The settings are in each caption.
 
 ![doll preset at 0.6](https://raw.githubusercontent.com/Ekaghni/facetweak/main/assets/compare_2.jpg)
 
-`facetweak examples/portrait2.jpg --preset doll --strength 0.6`. This one is a full-body shot with a small face, so the change is gentle.
+`facetweak examples/portrait2.jpg --preset doll`
 
 ![sculpted preset](https://raw.githubusercontent.com/Ekaghni/facetweak/main/assets/compare_3.jpg)
 
-`facetweak examples/portrait3.jpg --preset sculpted`
+`facetweak examples/portrait3.jpg --eye-size 0.8 --face-slim 0.8 --brow-lift 0.5 --nose-size -0.6 --lip-size 0.6 --chin-fullness -0.5`
 
 ![custom settings](https://raw.githubusercontent.com/Ekaghni/facetweak/main/assets/compare_4.jpg)
 
-`facetweak examples/portrait4.jpg --eye-size 0.4 --brow-lift 0.3 --lip-size 0.3 --nose-size -0.3`
+`facetweak examples/portrait4.jpg --eye-size 0.9 --brow-lift 0.6 --lip-size 0.7 --nose-size -0.7 --face-slim 0.6 --eye-openness 0.5`
 
 How strength changes the result: the same photo with the `doll` preset at 0, 0.5 and 1.0 (cropped, labels added).
 
 ![strength 0, 0.5, 1](https://raw.githubusercontent.com/Ekaghni/facetweak/main/assets/strength.jpg)
 
-Full 1.0 is already past what I'd call natural. `--strength 0.5` is a good place to start.
+The full-strength end is deliberately obvious. For photos you'd actually use, `--strength 0.4` to `0.6` of a preset is a more natural place to start.
 
 ## How it works
 

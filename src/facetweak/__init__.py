@@ -4,7 +4,7 @@ from .core import FaceTweak, draw_landmarks, read_image, retouch, side_by_side, 
 from .effects import PARAMS, PRESETS, Adjustments
 from .landmarks import BackendUnavailable, Face, FaceTweakError, NoFaceFound
 
-__version__ = "0.1.3"
+__version__ = "0.2.0"
 
 __all__ = [
     "Adjustments", "BackendUnavailable", "Face", "FaceTweak", "FaceTweakError", "NoFaceFound",
