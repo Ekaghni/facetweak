@@ -119,7 +119,7 @@ class MediaPipeBackend:
         except OSError as exc:
             hint = ""
             if "libEGL" in str(exc) or "libGL" in str(exc):
-                hint = " On Debian/Ubuntu run: sudo apt install libegl1 libgl1"
+                hint = " On Debian/Ubuntu run: sudo apt install libegl1 libgles2 libgl1"
             raise BackendUnavailable("mediapipe could not load its native library (%s).%s" % (exc, hint)) from exc
 
     def detect(self, image_bgr: np.ndarray) -> List[Face]:

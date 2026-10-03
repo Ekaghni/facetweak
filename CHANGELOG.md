@@ -2,7 +2,7 @@
 
 ## 0.1.1
 
-- Missing system libraries on Linux (`libEGL.so.1`) now give a message with the apt command instead of a raw OSError.
+- Missing system libraries on Linux (`libEGL.so.1`, `libGLESv2.so.2`) now give a message with the apt command instead of a raw OSError.
 - README: Linux note. CI installs the libraries and runs the model tests on Ubuntu.
 
 ## 0.1.0
