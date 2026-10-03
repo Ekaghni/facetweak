@@ -1,0 +1,5 @@
+portrait.jpg
+  Chris Cassidy, official NASA astronaut portrait (cropped), 960 px wide.
+  Source: https://commons.wikimedia.org/wiki/File:Chris_Cassidy_-_Official_NASA_Astronaut_Portrait_in_EMU_(cropped).jpg
+  Original: https://www.flickr.com/photos/nasa2explore/49747304058/
+  License: public domain (work of NASA).

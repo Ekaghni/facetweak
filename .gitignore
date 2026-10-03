@@ -1,0 +1,13 @@
+__pycache__/
+*.egg-info/
+build/
+dist/
+.venv/
+.pytest_cache/
+*.dat
+*.task
+*_tweaked.*
+*_landmarks.png
+# personal photos from the original project stay local
+legacy/*.png
+legacy/*.jpg
