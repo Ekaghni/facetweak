@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.2
+
+- The Linux hint now lists all three libraries (`libegl1 libgles2 libgl1`). 0.1.1 missed `libgles2`.
+
 ## 0.1.1
 
 - Missing system libraries on Linux (`libEGL.so.1`, `libGLESv2.so.2`) now give a message with the apt command instead of a raw OSError.

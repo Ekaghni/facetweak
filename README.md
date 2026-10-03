@@ -53,7 +53,7 @@ Python 3.9 or newer. The default install pulls in `numpy`, `opencv-python` and `
 pip install facetweak
 ```
 
-On a bare Linux box (a Docker image, a CI runner) MediaPipe needs two system libraries. If you see `libEGL.so.1` or `libGLESv2.so.2: cannot open shared object file`, run `sudo apt install libegl1 libgles2 libgl1`.
+On a bare Linux box (a Docker image, a CI runner) MediaPipe needs a few system libraries. If you see `libEGL.so.1` or `libGLESv2.so.2: cannot open shared object file`, run `sudo apt install libegl1 libgles2 libgl1`.
 
 If you want the older dlib landmark detector instead, install the extra. It needs CMake and a C++ compiler on most platforms:
 

@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "facetweak"
-version = "0.1.1"
+version = "0.1.2"
 description = "Face retouching from the command line or Python: bigger eyes, slimmer face, nose and lip tweaks with smooth landmark-guided warps. Runs on CPU."
 readme = "README.md"
 requires-python = ">=3.9"
