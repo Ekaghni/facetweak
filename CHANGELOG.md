@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.3
+
+- README: more before/after examples, a strength comparison and a table of what has and hasn't been tested. Three more public domain sample photos in `examples/`.
+
 ## 0.1.2
 
 - The Linux hint now lists all three libraries (`libegl1 libgles2 libgl1`). 0.1.1 missed `libgles2`.

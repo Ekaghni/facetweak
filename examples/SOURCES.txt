@@ -3,3 +3,19 @@ portrait.jpg
   Source: https://commons.wikimedia.org/wiki/File:Chris_Cassidy_-_Official_NASA_Astronaut_Portrait_in_EMU_(cropped).jpg
   Original: https://www.flickr.com/photos/nasa2explore/49747304058/
   License: public domain (work of NASA).
+
+portrait2.jpg
+  Samantha Cristoforetti, official portrait in an EMU spacesuit, 960 px wide.
+  Source: https://commons.wikimedia.org/wiki/File:Samantha_Cristoforetti_official_portrait_in_an_EMU_spacesuit.jpg
+  Original: https://www.flickr.com/photos/nasa2explore/12778323243/
+  License: public domain (work of NASA, as marked on Wikimedia Commons).
+
+portrait3.jpg
+  Kayla Barron, official NASA portrait, 960 px wide.
+  Source: https://commons.wikimedia.org/wiki/File:Kayla_Barron_official_portrait.jpg
+  License: public domain (work of NASA, as marked on Wikimedia Commons).
+
+portrait4.jpg
+  Victor Glover, official NASA portrait 2020 (cropped), 960 px wide.
+  Source: https://commons.wikimedia.org/wiki/File:Victor_Glover_official_portrait_2020_(cropped).jpg
+  License: public domain (work of NASA, as marked on Wikimedia Commons).

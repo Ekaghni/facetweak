@@ -106,6 +106,28 @@ write_image("out.jpg", out)
 
 If you already have landmarks (from your own detector, in the 68-point layout), `facetweak.effects.apply(image, points, adjustments)` skips detection.
 
+## More examples
+
+All four photos are public domain NASA portraits in `examples/`. Left is the original, right is the result. The settings are in each caption, so you can reproduce them.
+
+![doll preset at 0.6](https://raw.githubusercontent.com/Ekaghni/facetweak/main/assets/compare_2.jpg)
+
+`facetweak examples/portrait2.jpg --preset doll --strength 0.6`. This one is a full-body shot with a small face, so the change is gentle.
+
+![sculpted preset](https://raw.githubusercontent.com/Ekaghni/facetweak/main/assets/compare_3.jpg)
+
+`facetweak examples/portrait3.jpg --preset sculpted`
+
+![custom settings](https://raw.githubusercontent.com/Ekaghni/facetweak/main/assets/compare_4.jpg)
+
+`facetweak examples/portrait4.jpg --eye-size 0.4 --brow-lift 0.3 --lip-size 0.3 --nose-size -0.3`
+
+How strength changes the result: the same photo with the `doll` preset at 0, 0.5 and 1.0 (cropped, labels added).
+
+![strength 0, 0.5, 1](https://raw.githubusercontent.com/Ekaghni/facetweak/main/assets/strength.jpg)
+
+Full 1.0 is already past what I'd call natural. `--strength 0.5` is a good place to start.
+
 ## How it works
 
 1. MediaPipe's face landmarker finds 478 points. I map 68 of them onto the classic dlib layout (jaw, brows, nose, eyes, mouth), because that is what the original tool used and it is easy to reason about. The mapping is in `landmarks.py`.
@@ -130,6 +152,21 @@ The first call in a process takes about 1.2 s because it loads the model. `bench
 ## Accuracy of the landmarks
 
 I compared the 68 mapped MediaPipe points to dlib's own 68 points on the example portrait, as a fraction of the distance between the eye centres. Eyes differ by about 2%, mouth about 5%, brows about 6%, nose about 13% and jaw about 17%. The jaw gap is systematic: MediaPipe's contour sits on the outer edge of the face and dlib's a bit inside it. This is one image, so it's a sanity check and not a benchmark. The adjustment strengths were tuned by eye, on a handful of photos.
+
+## Where it has been tested
+
+I can't promise it runs on every machine. This is what I actually checked:
+
+| | status |
+|---|---|
+| Windows 11, Python 3.10, installed from PyPI in a clean venv | ran by hand |
+| CI: Linux, macOS, Windows with Python 3.10 and 3.12; Linux with 3.9 | unit tests pass |
+| CI: model download and real face detection | Ubuntu only |
+| Python 3.11, 3.13, ARM Linux, Alpine, 32-bit systems | not tested |
+| `facetweak gui` | not tested |
+| `facetweak[dlib]` on a clean machine | not tested |
+
+If MediaPipe has no wheel for your platform, the default install will fail, and the dlib extra is the fallback. Bug reports with your OS and Python version are welcome.
 
 ## Limitations
 
