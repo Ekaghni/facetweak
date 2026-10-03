@@ -114,7 +114,13 @@ class MediaPipeBackend:
             num_faces=max_faces,
             min_face_detection_confidence=0.4,
         )
-        self._landmarker = vision.FaceLandmarker.create_from_options(options)
+        try:
+            self._landmarker = vision.FaceLandmarker.create_from_options(options)
+        except OSError as exc:
+            hint = ""
+            if "libEGL" in str(exc) or "libGL" in str(exc):
+                hint = " On Debian/Ubuntu run: sudo apt install libegl1 libgl1"
+            raise BackendUnavailable("mediapipe could not load its native library (%s).%s" % (exc, hint)) from exc
 
     def detect(self, image_bgr: np.ndarray) -> List[Face]:
         import cv2

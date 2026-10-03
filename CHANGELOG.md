@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.1
+
+- Missing system libraries on Linux (`libEGL.so.1`) now give a message with the apt command instead of a raw OSError.
+- README: Linux note. CI installs the libraries and runs the model tests on Ubuntu.
+
 ## 0.1.0
 
 First release. Rewrite of the original single-file script as a package.
